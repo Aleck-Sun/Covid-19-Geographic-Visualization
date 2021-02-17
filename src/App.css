@@ -4,13 +4,19 @@
   padding: 0;
 }
 
+.marker-txt {
+  color:white;
+  font-size: xx-small;
+}
+
 .marker-btn {
   background: none;
   border: none;
   cursor: pointer;
+  color:white;
 }
 
-.marker-btn img {
+.marker-img {
   width:20px;
   height: 20px;
 }
@@ -18,7 +24,7 @@
 .countryCases {
   color:white;
   background-color: white;
-  width:100px;
-  height:100px;
-  border-radius: 50px;
+  width:20px;
+  height:20px;
+  border-radius: 10px;
 }

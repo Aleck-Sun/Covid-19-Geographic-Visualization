@@ -32,16 +32,14 @@ function App() {
         mapStyle="mapbox://styles/abs-development/ckl3yn84m2vqp17nqkpx0glnh"
         onViewportChange={viewport => {setViewport(viewport);}}
       >
+        {/* {countriesData.length > 0 ?
+          <Marker key = {countriesData[180].CountryName} latitude = {parseInt(countriesData[180].Latitude)} longitude = {parseInt(countriesData[180].Longitude)}>
+            <p className="marker-txt">This is a marker right here</p>
+          </Marker>: 'Loading...'} */}
         {countriesData.length > 0 ? countriesData.map(country => {
-          console.log("creating marker");
-          <Marker
-            latitude = {country.Latitude}
-            longitude = {country.Longitude}>
-              <div id="countryCases">
-                <button id="marker-btn">
-                  <img src="https://cdn2.iconfinder.com/data/icons/picons-basic-2/57/basic2-059_pin_location-512.png" />
-                </button>
-              </div>
+          console.log("making marker:", country.CountryName, country.Latitude);
+          <Marker key = {country.CountryName} latitude = {parseInt(country.Latitude)} longitude = {parseInt(country.Longitude)}>
+            <p className="marker-txt">marker</p>
           </Marker>
         }) : 'Loading...'}
       </ReactMapGL>
