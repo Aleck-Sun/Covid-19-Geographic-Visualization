@@ -4,27 +4,76 @@
   padding: 0;
 }
 
-.marker-txt {
-  color:white;
-  font-size: xx-small;
+.title-bar {
+  width: 100vw;
+  height: 8vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color:none;
+  position: absolute;
+  z-index: 5;
+}
+
+.title-btn {
+  background: white;
+  color:rgb(78, 78, 78);
+  cursor: pointer;
+  padding:8px 22px;
+  border: none;
+  font-size: small;
+}
+
+#left-btn {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+#middle-btn {
+  border-left: 1px solid rgb(65, 87, 131, 0.3);
+}
+
+#right-btn {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-left: 1px solid rgba(65, 87, 131, 0.3);
+}
+
+.title-btn:focus {
+  outline:none;
+  box-shadow: none;
+  background:rgb(206, 208, 245);
+  color:black;
+  transition: all 0.2s ease-out;
+}
+
+.title-btn:active {
+  outline:none;
+  box-shadow: none;
+  background:rgb(206, 208, 245);
+  color:black;
+  transition: all 0.2s ease-out;
+}
+
+.map {
+  width:100vw;
+  height:100vh;
+  position:absolute;
+}
+
+.dot {
+  background-color: rgba(255, 255, 255, 0.233);
+  border: 1px solid white;
+  border-radius: 50%;
 }
 
 .marker-btn {
   background: none;
   border: none;
   cursor: pointer;
-  color:white;
 }
 
-.marker-img {
-  width:20px;
-  height: 20px;
-}
-
-.countryCases {
-  color:white;
-  background-color: white;
-  width:20px;
-  height:20px;
-  border-radius: 10px;
+.marker-btn:focus {
+  outline: none;
+  box-shadow: none;
 }
