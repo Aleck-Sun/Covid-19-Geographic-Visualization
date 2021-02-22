@@ -33,10 +33,12 @@ const getCountries = async () => {
 
 // Gets the lat and longitude of all countries
 const getData = async () => {
+    // Fetch from .csv file
     return fetch(data)
         .then(response => response.text())
         .then(data => {
             if (data) {
+                // Split in rows, then split each row into columns to parse
                 var countryCoordinates = [];
                 const rows = data.split('\n');
                 for (var i = 0; i < rows.length; i++) {
@@ -56,7 +58,14 @@ const getData = async () => {
 // Gets the country cases from json file
 const getCountry = async () => {
     const countries = summary.Countries.map(country => {
-        var deathRecoveryRate = country.TotalRecovered/country.TotalDeaths;
+        // Make sure no division by zero
+        var deathRecoveryRate;
+        if (country.TotalDeaths != 0) {
+            deathRecoveryRate = country.TotalRecovered/country.TotalDeaths;
+        } else {
+            deathRecoveryRate = 0;
+        }
+
         return country = {
             "CountryCode": country.CountryCode,
             "Cases": country.TotalConfirmed,
